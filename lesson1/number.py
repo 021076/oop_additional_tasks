@@ -1,30 +1,28 @@
 """
 Создай класс `Number` c полем `value` (указывается при инициализации)
-
 Создай экземпляр, например `x = Number(7)`
-
 Добавь методы:
-
 `.get()` возвращает текущее value
-
 `.add(<значение>)` добавляет указанное число к value
-
 `.substract(<значение>)` вычитает указанное число из value
 """
+
 
 class Number:
 
     def __init__(self, value):
-        ...
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self):
+        return self.value
 
-    def ...:
-        ...
+    def add(self, add_value):
+        self.value = self.value + add_value
+        return self.value
 
-    def ...:
-        ...
+    def substract(self, substract_value):
+        self.value = self.value - substract_value
+        return self.value
 
 
 # код для проверки 
