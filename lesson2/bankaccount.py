@@ -12,10 +12,34 @@
 
 
 class BankAccount:
-    pass
+
+    def __init__(self, balance):
+        self.__balance = balance
+
+    @property
+    def balance(self):
+        return self.__balance
+
+    @balance.setter
+    def balance(self, newbalance):
+        self.__balance = newbalance
+
+    def deposit(self, amount):
+        self.__balance = self.__balance + amount
+
+    def withdraw(self, amount):
+        if self.__balance < amount:
+            raise Exception('Недостаточно средств')
+        else:
+            self.__balance = self.__balance - amount
+
+    def close(self):
+        amount = self.__balance
+        newbalance = self.withdraw(amount)
+        return newbalance
 
 
-# код для проверки 
+# код для проверки
 account = BankAccount(1000)
 print(account.balance)  # 1000
 
